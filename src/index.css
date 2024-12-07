@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#0A0A0B] text-white;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #3B82F6, #8B5CF6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-gradient {
+  background: url('../public/header.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background: radial-gradient(circle at center, rgb(59 130 246) 0%, rgb(10 10 11) 70%);  */
+  /* background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1) 0%, rgba(10, 10, 11, 0) 70%);  */
+}
+
+.card-gradient {
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+}
+
+.glow {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
