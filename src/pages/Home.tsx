@@ -11,8 +11,15 @@ import {
 import { BackgroundLines } from "../ui/background-line";
 import { HoverBorderGradient } from "../ui/hover-border-gradient";
 import { TracingBeam } from "../ui/tracing-beam";
+import { useState } from "react";
+import Modal from "../components/Modal";
+import { AnimatedModalDemo } from "./Test";
 
 const Home = () => {
+
+  const [isOpen, setIsOpen] = useState(false);
+
+
   const services = [
     {
       icon: <Smartphone className="w-6 h-6" />,
@@ -176,17 +183,13 @@ const Home = () => {
               <h2 className="text-3xl uppercase font-bold mb-8">
                 Start Your Project Today
               </h2>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r uppercase from-primary to-primary-dark text-white px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-lg hover:shadow-primary/20 transition-shadow inline-flex items-center gap-2"
-              >
-                Contact Us <ArrowRight className="w-5 h-5" />
-              </motion.button>
+            
+              <AnimatedModalDemo nvBtn={false} />
             </motion.div>
           </div>
         </section>
       </div>
+      <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
     </TracingBeam>
   );
 };

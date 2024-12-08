@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Users, Target, Zap } from 'lucide-react';
 
@@ -44,7 +43,7 @@ const About = () => {
   };
 
   return (
-    <div className="min-h-screen pt-16 bg-dark-100 text-gray-200">
+    <div className="min-h-screen pt-16 bg-black text-gray-200">
       {/* Hero Section */}
       <section className="relative py-20">
         <div
@@ -82,7 +81,7 @@ const About = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="text-center p-6 bg-gray-800 rounded-lg shadow-lg"
+                className="text-center p-6 card-gradient rounded-lg shadow-lg"
               >
                 <div className="text-5xl font-extrabold text-gray-100 mb-2">{stat.value}</div>
                 <div className="text-gray-400 text-lg">{stat.label}</div>
@@ -93,7 +92,7 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 bg-dark-100">
+      <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -118,7 +117,7 @@ const About = () => {
                 key={index}
                 variants={itemVariants}
                 whileHover={{ y: -5 }}
-                className="bg-gray-800 p-8 rounded-xl shadow-lg text-center transform transition-transform duration-300 hover:shadow-primary/20"
+                className="card-gradient p-8 rounded-xl shadow-lg text-center transform transition-transform duration-300 hover:shadow-primary/20"
               >
                 <div className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center text-gray-100 mx-auto mb-4 hover:scale-110 transition-transform">
                   {value.icon}
@@ -157,7 +156,7 @@ const About = () => {
                 key={index}
                 variants={itemVariants}
                 whileHover={{ scale: 1.05 }}
-                className="bg-gray-800 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300"
+                className="card-gradient rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300"
               >
                 <img
                   src={`https://source.unsplash.com/random/400x400?portrait&${index}`}

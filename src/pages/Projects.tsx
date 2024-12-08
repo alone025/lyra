@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import ProjectCard from '../components/ProjectCard';
 import { sampleProjects } from '../data/projects';
+import { AnimatedModalDemo } from './Test';
 
 const Projects = () => {
   const containerVariants = {
@@ -20,9 +21,9 @@ const Projects = () => {
   };
 
   return (
-    <div className="min-h-screen pt-16 bg-dark-100 text-gray-200">
+    <div className="min-h-screen pt-16 bg-black text-gray-200">
       {/* Hero Section */}
-      <section className="relative py-20 bg-dark-100 text-center">
+      <section className="relative py-20 bg-black text-center">
         <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: 'url(https://source.unsplash.com/1600x900/?technology,projects)' }}></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -39,7 +40,7 @@ const Projects = () => {
       </section>
 
       {/* Projects Section */}
-      <section className="py-20 bg-dark-100">
+      <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             variants={containerVariants}
@@ -53,7 +54,7 @@ const Projects = () => {
                 key={project.id}
                 variants={itemVariants}
                 whileHover={{ scale: 1.05 }}
-                className="bg-gray-800 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300"
+                className="card-gradient rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300"
               >
                 <ProjectCard project={project} />
               </motion.div>
@@ -74,13 +75,14 @@ const Projects = () => {
             <p className="text-xl max-w-3xl mx-auto text-gray-300 mb-8">
               Let us bring your ideas to life with our expertise and passion for innovation.
             </p>
-            <motion.button
+            {/* <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-to-r from-blue-500 to-blue-700 uppercase text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-lg hover:shadow-blue-500/50 transition-all"
             >
               Contact Us
-            </motion.button>
+            </motion.button> */}
+                 <AnimatedModalDemo nvBtn={false} />
           </motion.div>
         </div>
       </section>

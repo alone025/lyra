@@ -48,10 +48,10 @@ export const TracingBeam = ({
   return (
     <motion.div
       ref={ref}
-      className={cn("relative w-full h-full", className)}
+      className={cn("relative h-full bg-black", className)}
     >
-      <div className="absolute top-0 left-0">
-        <motion.div
+      <div className="absolute -left-7 top-3  z-10">
+        {/* <motion.div
           transition={{
             duration: 0.2,
             delay: 0.5,
@@ -77,7 +77,7 @@ export const TracingBeam = ({
             }}
             className="h-2 w-2  rounded-full border border-neutral-300 bg-white"
           />
-        </motion.div>
+        </motion.div> */}
         <svg
           viewBox={`0 0 20 ${svgHeight}`}
           width="20"

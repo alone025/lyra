@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-[#0A0A0B] text-white;
+    @apply bg-[#000] text-white;
   }
 }
 
