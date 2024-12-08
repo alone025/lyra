@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import ProjectCard from '../components/ProjectCard';
 import { sampleProjects } from '../data/projects';
@@ -70,14 +70,14 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6 text-white">Start Your Next Project with Us</h2>
+            <h2 className="text-3xl font-bold uppercase mb-6 text-white">Don't wait for tomorrow. Start your project now.</h2>
             <p className="text-xl max-w-3xl mx-auto text-gray-300 mb-8">
               Let us bring your ideas to life with our expertise and passion for innovation.
             </p>
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-lg hover:shadow-blue-500/50 transition-all"
+              className="bg-gradient-to-r from-blue-500 to-blue-700 uppercase text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-lg hover:shadow-blue-500/50 transition-all"
             >
               Contact Us
             </motion.button>
