@@ -50,7 +50,7 @@ export const ModalTrigger = ({
   return (
     <motion.button
       className={cn(
-        "px-4 py-2 rounded-md text-black dark:text-white text-center relative overflow-hidden",
+        "px-4 py-2 rounded-md text-white text-center relative overflow-hidden",
         className
       )}
       whileHover={{ scale: 1.05 }}
@@ -105,7 +105,7 @@ export const ModalBody = ({
           <motion.div
             ref={modalRef}
             className={cn(
-              "min-h-[50%] max-h-[90%] md:max-w-[40%] bg-white dark:bg-neutral-950 border border-transparent dark:border-neutral-800 md:rounded-2xl relative z-50 flex flex-col flex-1 overflow-hidden",
+              "min-h-[50%] max-h-[90%] md:max-w-[40%] bg-neutral-950 border border-transparent border-neutral-800 md:rounded-2xl relative z-50 flex flex-col flex-1 overflow-hidden",
               className
             )}
             initial={{
@@ -165,7 +165,7 @@ export const ModalFooter = ({
   return (
     <div
       className={cn(
-        "flex justify-end p-4 bg-gray-100 dark:bg-neutral-900",
+        "flex justify-end p-4 bg-neutral-900",
         className
       )}
     >
@@ -187,18 +187,18 @@ const {setOpen} = useModal()
   return (
     <div
       className={cn(
-        "flex justify-end p-4 bg-gray-100 dark:bg-neutral-900",
+        "flex justify-end p-4 bg-neutral-900",
         className
       )}
     > 
      <motion.button onClick={()=> setOpen(false)} whileHover={{ scale: 1.05 }} 
     whileTap={{ scale: 0.95 }} 
-    transition={{ duration: 0.2 }} className="px-2 py-1 bg-gray-200 text-black dark:bg-black dark:border-black dark:text-white border border-gray-300 rounded-md text-sm w-28">
+    transition={{ duration: 0.2 }} className="px-2 py-1 bg-black border-black text-white border  rounded-md text-sm w-28">
               Cancel
             </motion.button>
             <motion.button onClick={()=> setOpen(false)}  whileHover={{ scale: 1.05 }} 
     whileTap={{ scale: 0.95 }}
-    transition={{ duration: 0.2 }} className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28">
+    transition={{ duration: 0.2 }} className="bg-white text-black text-sm px-2 py-1 rounded-md border border-black w-28">
               Send
             </motion.button>
     </div>
@@ -242,7 +242,7 @@ const CloseIcon = () => {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="text-black dark:text-white h-4 w-4 group-hover:scale-125 group-hover:rotate-3 transition duration-200"
+        className="text-white h-4 w-4 group-hover:scale-125 group-hover:rotate-3 transition duration-200"
       >
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
         <path d="M18 6l-12 12" />

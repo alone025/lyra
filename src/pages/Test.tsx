@@ -40,7 +40,7 @@ export function AnimatedModalDemo({nvBtn}:{nvBtn: boolean}) {
       <Modal>
           {
             !nvBtn ? (
-              <ModalTrigger className="bg-black dark:bg-white dark:text-black text-white flex px-8 py-4 text-lg font-semibold font-sans justify-center group/modal-btn">
+              <ModalTrigger className="bg-white text-black flex px-8 py-4 text-lg font-semibold font-sans justify-center group/modal-btn">
               <span className="group-hover/modal-btn:translate-x-40 uppercase text-center transition duration-500">
               Contact Us
               </span>
@@ -63,7 +63,7 @@ export function AnimatedModalDemo({nvBtn}:{nvBtn: boolean}) {
           }
         <ModalBody>
           <ModalContent>
-            <h4 className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center">
+            <h4 className="text-lg md:text-2xl text-neutral-100 font-bold text-center">
             Leave a request to connect
             </h4>
             <p className="text-sm 2xl:text-base mt-2  mb-8 text-center">Leave your details and we will contact you soon.</p>

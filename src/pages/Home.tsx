@@ -11,13 +11,11 @@ import {
 import { BackgroundLines } from "../ui/background-line";
 import { HoverBorderGradient } from "../ui/hover-border-gradient";
 import { TracingBeam } from "../ui/tracing-beam";
-import { useState } from "react";
-import Modal from "../components/Modal";
+
 import { AnimatedModalDemo } from "./Test";
 
 const Home = () => {
 
-  const [isOpen, setIsOpen] = useState(false);
 
 
   const services = [
@@ -189,7 +187,7 @@ const Home = () => {
           </div>
         </section>
       </div>
-      <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
+     
     </TracingBeam>
   );
 };
