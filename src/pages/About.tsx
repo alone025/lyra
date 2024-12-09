@@ -63,18 +63,18 @@ const About = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-gray-200">
+    <div className=" bg-black text-gray-200">
       {/* Hero Section */}
 
       <BackgroundBeamsWithCollision>
-        <section className="relative flex flex-col w-full justify-between min-h-screen pt-36 pb-20">
+        <section className="relative flex flex-col w-full justify-between h-auto  pt-36 pb-20">
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-5xl font-extrabold mb-6 text-white">
+              <h1 className="text-[25px]  md:text-5xl font-extrabold mb-6 text-white">
                 About{" "}
                 <span className="gradient-text uppercase leading-normal">
                   Lyra UZ
@@ -103,10 +103,10 @@ const About = () => {
                     variants={itemVariants}
                     className="text-center p-6 z-40 card-gradient rounded-lg shadow-lg"
                   >
-                    <div className="text-5xl font-extrabold text-gray-100 mb-2">
+                    <div className="text-[25px] md:text-5xl font-extrabold text-gray-100 mb-2">
                       {stat.value}
                     </div>
-                    <div className="text-gray-400 text-lg">{stat.label}</div>
+                    <div className="text-gray-400 text-[16px] md:text-lg">{stat.label}</div>
                   </motion.div>
                 ))}
               </motion.div>
@@ -124,8 +124,8 @@ const About = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-4 text-white">Our Values</h2>
-            <p className="text-xl max-w-2xl mx-auto text-gray-400">
+            <h2 className="text-[25px] md:text-4xl font-bold mb-4 text-white">Our Values</h2>
+            <p className="text-[16px] md:text-xl max-w-2xl mx-auto text-gray-400">
               These core values guide everything we do
             </p>
           </motion.div>
@@ -165,8 +165,8 @@ const About = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4 text-white">Founders</h2>
-          <p className="text-xl max-w-2xl mx-auto text-gray-400">
+          <h2 className="text-[25px] md:text-4xl font-bold mb-4 text-white">Founders</h2>
+          <p className="text-[16px] md:text-xl max-w-2xl mx-auto text-gray-400">
             Meet the talented individuals who make it all possible
           </p>
         </motion.div>

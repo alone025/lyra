@@ -76,9 +76,9 @@ const Home = () => {
 
   return (
     <TracingBeam>
-      <div className="min-h-screen">
+      <div className="h-auto">
         {/* Hero Section */}
-        <section className="min-h-screen relative overflow-hidden">
+        <section className="h-auto relative md:overflow-hidden">
           <BackgroundLines>
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
               <motion.div
@@ -88,7 +88,7 @@ const Home = () => {
                 className="text-center"
               >
                 <motion.h1
-                  className="text-5xl sm:text-6xl md:text-7xl font-bold mb-8"
+                  className="text-[25px] sm:text-6xl md:text-7xl font-bold mb-8 mt-[50px] md:mt-0"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
@@ -99,7 +99,7 @@ const Home = () => {
                   </span>
                 </motion.h1>
                 <motion.p
-                  className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto"
+                  className="text-[16px] md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.4 }}
