@@ -3,10 +3,11 @@ import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
 import { AnimatedModalDemo } from '../pages/Test';
-import { useModal } from '../ui/animated-modal';
 
-const Navbar = () => {
-  const {open} = useModal()
+interface NavbarProps {
+  handleOpenModal: () => void;
+}
+const Navbar: React.FC<NavbarProps> = ({ handleOpenModal }) => {
   const [scrolled, setScrolled] = useState(false);
   
   useEffect(() => {
@@ -16,6 +17,7 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
 
 
   
@@ -63,7 +65,9 @@ const Navbar = () => {
           </div>
           
       
+      <span onClick={handleOpenModal}>
           <AnimatedModalDemo nvBtn />
+      </span>
         </div>
       </div>
     </motion.nav>
