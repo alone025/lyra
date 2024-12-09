@@ -9,13 +9,13 @@
 }
 
 .gradient-text {
-  background: linear-gradient(to right, #3B82F6, #8B5CF6);
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .hero-gradient {
-  background: url('../public/header.jpg');
+  background: url("../public/header.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -24,7 +24,11 @@
 }
 
 .card-gradient {
-  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.02)
+  );
 }
 
 .glow {
@@ -36,12 +40,54 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
-
-.backdrop-filter-lg2{
+.backdrop-filter-lg2 {
   filter: blur(16px);
-  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
+    var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
+    var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
+    var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
+    var(--tw-backdrop-sepia);
+}
+
+.burger {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.burger.open div:nth-child(1) {
+  transform: rotate(45deg) translateY(10px);
+}
+
+.burger.open div:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open div:nth-child(3) {
+  transform: rotate(-45deg) translateY(-10px);
+}
+
+.menu {
+  transition: transform 0.3s ease;
+}
+
+.menu.translate-x-0 {
+  transform: translateX(0);
+}
+
+.menu.-translate-x-full {
+  transform: translateX(-100%);
 }
