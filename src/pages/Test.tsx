@@ -42,19 +42,19 @@ export function AnimatedModalDemo({nvBtn}:{nvBtn: boolean}) {
       {/* <Modal> */}
           {
             !nvBtn ? (
-              <motion.div 
+              <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="text-center relative overflow-hidden bg-white text-black flex px-8 py-4 text-lg font-semibold font-sans justify-center group/modal-btn">
+              className="rounded-md text-center relative overflow-hidden bg-white text-black flex px-8 py-4 text-lg font-semibold font-sans justify-center group/modal-btn">
               <span className="group-hover/modal-btn:translate-x-40 uppercase text-center transition duration-500">
               Contact Us
               </span>
               <div className="-translate-x-40 group-hover/modal-btn:translate-x-0 flex items-center justify-center absolute inset-0 transition duration-500 text-white z-20">
               <ArrowRight className="w-5 text-black h-5" />
               </div>
-            </motion.div>
+            </motion.button>
             ) : (
-              <motion.div 
+              <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }} 
             className="text-center relative overflow-hidden bg-gradient-to-r from-primary to-primary-dark text-white px-4 py-2 rounded-lg text-sm font-medium hover:shadow-lg hover:shadow-primary/20 transition-shadow"
@@ -65,7 +65,7 @@ export function AnimatedModalDemo({nvBtn}:{nvBtn: boolean}) {
             Get Started
           </button>
              
-            </motion.div>
+            </motion.button>
             )
           }
         {/* <ModalBody cls2={`${nvBtn && 'h-screen'}`} className={`${nvBtn && 'h-screen'}`}>
