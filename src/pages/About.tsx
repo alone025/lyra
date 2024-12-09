@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Users, Target, Zap } from 'lucide-react';
+import { BackgroundBeamsWithCollision } from '../ui/background-beams';
 
 const About = () => {
   const stats = [
@@ -43,32 +44,26 @@ const About = () => {
   };
 
   return (
-    <div className="min-h-screen pt-16 bg-black text-gray-200">
+    <div className="min-h-screen bg-black text-gray-200">
       {/* Hero Section */}
-      <section className="relative py-20">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{
-            backgroundImage: 'url(https://source.unsplash.com/1600x900/?technology)',
-          }}
-        ></div>
+
+      <BackgroundBeamsWithCollision>
+      <section className="relative flex flex-col w-full justify-between min-h-screen pt-36 pb-20">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl font-extrabold mb-6 text-white">About Lyra Uz</h1>
+            <h1 className="text-5xl font-extrabold mb-6 text-white">About <span className='gradient-text uppercase leading-normal'>Lyra UZ</span></h1>
             <p className="text-xl max-w-3xl mx-auto text-gray-300">
               We are a team of passionate developers and designers dedicated to creating
               exceptional digital experiences that drive business growth.
             </p>
           </motion.div>
         </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-20">
+         {/* Stats Section */}
+      <section className="pt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             variants={containerVariants}
@@ -81,7 +76,7 @@ const About = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="text-center p-6 card-gradient rounded-lg shadow-lg"
+                className="text-center p-6 z-40 card-gradient rounded-lg shadow-lg"
               >
                 <div className="text-5xl font-extrabold text-gray-100 mb-2">{stat.value}</div>
                 <div className="text-gray-400 text-lg">{stat.label}</div>
@@ -90,6 +85,11 @@ const About = () => {
           </motion.div>
         </div>
       </section>
+      </section>
+      </BackgroundBeamsWithCollision>
+     
+
+     
 
       {/* Values Section */}
       <section className="py-20 bg-black">

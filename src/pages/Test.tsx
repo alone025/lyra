@@ -61,7 +61,7 @@ export function AnimatedModalDemo({nvBtn}:{nvBtn: boolean}) {
             </ModalTrigger>
             )
           }
-        <ModalBody>
+        <ModalBody cls2={`${nvBtn && 'h-screen'}`} className={`${nvBtn && 'h-screen'}`}>
           <ModalContent>
             <h4 className="text-lg md:text-2xl text-neutral-100 font-bold text-center">
             Leave a request to connect

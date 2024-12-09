@@ -115,7 +115,7 @@ const Home = () => {
                 Get Started <ArrowRight className="w-5 h-5" />
               </motion.button> */}
                 <div className="flex items-center justify-center">
-                  <HoverBorderGradient className="flex items-center gap-2 justify-center">
+                  <HoverBorderGradient className="flex items-center gap-2 justify-center bg-black text-white">
                     Get Started <ArrowRight className="w-4 h-4" />
                   </HoverBorderGradient>
                 </div>
