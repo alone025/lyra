@@ -3,6 +3,11 @@ import { motion } from 'framer-motion';
 import ProjectCard from '../components/ProjectCard';
 import { sampleProjects } from '../data/projects';
 import { AnimatedModalDemo } from './Test';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+
+gsap.registerPlugin(ScrollTrigger) 
 
 
 
@@ -10,6 +15,21 @@ const Projects = () => {
 
 
 
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
+  };
 
 
   return (
