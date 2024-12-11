@@ -1,6 +1,7 @@
 import { motion, useCycle } from "framer-motion";
 import { NavLink } from "react-router-dom";
 import { Sparkles } from "lucide-react";
+import { useEffect, useState } from "react";
 
 interface NavbarProps {
   handleOpenModal: () => void;
@@ -8,6 +9,15 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ handleOpenModal }) => {
   const [isOpen, toggleOpen] = useCycle(false, true);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const sidebarVariants = {
     open: {
@@ -35,7 +45,9 @@ const Navbar: React.FC<NavbarProps> = ({ handleOpenModal }) => {
       <motion.nav
         initial={false}
         animate={isOpen ? "open" : "closed"}
-        className="fixed top-0 left-0 w-full z-50"
+        className={`fixed top-0 w-full z-[9999] transition-all duration-300 ${
+          scrolled ? "bg-dark-100/80 backdrop-blur-lg" : "bg-transparent"
+        }`}
       >
         <div className="fixed top-0 w-full z-50 bg-dark-100/80 backdrop-blur-lg">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -82,11 +94,9 @@ const Navbar: React.FC<NavbarProps> = ({ handleOpenModal }) => {
                     Open Modal
                   </button>
                 </span>
-              
+
                 <div
-                  className={`burger ${
-                    isOpen ? "open" : ""
-                  } block lg:hidden`}
+                  className={`burger ${isOpen ? "open" : ""} block lg:hidden`}
                   onClick={() => toggleOpen()}
                 >
                   <div className="w-[25px] h-[2px] rounded-full block duration-300 bg-white"></div>
