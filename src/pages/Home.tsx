@@ -88,7 +88,7 @@ const Home = () => {
                 className="text-center"
               >
                 <motion.h1
-                  className="text-[25px] sm:text-6xl md:text-7xl font-bold mb-8 mt-[50px] md:mt-0"
+                  className="text-[30px] md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold mb-4 lg:mb-8 mt-[50px] md:mt-0"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
@@ -99,7 +99,7 @@ const Home = () => {
                   </span>
                 </motion.h1>
                 <motion.p
-                  className="text-[16px] md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto"
+                  className="text-[18px] md:text-xl lg:text-xl xl:text-2xl text-gray-400 mb-8 lg:mb-12 max-w-3xl mx-auto"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.4 }}

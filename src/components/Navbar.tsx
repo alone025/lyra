@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useCycle } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { AnimatedModalDemo } from "../pages/Test";
+import { useDimensions } from "../lib/useDeminsion";
 
 interface NavbarProps {
   handleOpenModal: () => void;
@@ -10,6 +11,10 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ handleOpenModal }) => {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isOpen, toggleOpen] = useCycle(false, true);
+  const containerRef = useRef(null);
+  const { height } = useDimensions(containerRef);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,6 +38,27 @@ const Navbar: React.FC<NavbarProps> = ({ handleOpenModal }) => {
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
+  };
+
+
+  const sidebar = {
+    open: (height = 1000) => ({
+      clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+      transition: {
+        type: "spring",
+        stiffness: 20,
+        restDelta: 2
+      }
+    }),
+    closed: {
+      clipPath: "circle(30px at 40px 40px)",
+      transition: {
+        delay: 0.5,
+        type: "spring",
+        stiffness: 400,
+        damping: 40
+      }
+    }
   };
 
   return (
@@ -90,16 +116,18 @@ const Navbar: React.FC<NavbarProps> = ({ handleOpenModal }) => {
                 className={`burger ${isMenuOpen ? "open" : ""} block sm:hidden`}
                 onClick={toggleMenu}
               >
-                <div className="w-[25px] h-[2px] rounded-full block duration-300 bg-[#050a41] dark:bg-white"></div>
-                <div className="w-[25px] h-[2px] rounded-full block duration-300 bg-[#050a41] dark:bg-white"></div>
-                <div className="w-[25px] h-[2px] rounded-full block duration-300 bg-[#050a41] dark:bg-white"></div>
+                <div className="w-[25px] h-[2px] rounded-full block duration-300 bg-white"></div>
+                <div className="w-[25px] h-[2px] rounded-full block duration-300 bg-white"></div>
+                <div className="w-[25px] h-[2px] rounded-full block duration-300 bg-white"></div>
               </div>
             </div>
           </div>
         </div>
       </motion.nav>
 
-      <div
+
+      <motion.div
+
         className={`menu duration-300 h-full xl:w-[calc(100%-170px)] lg:hidden max-w-xl xl:max-w-none xl:h-auto fixed inset-0 z-[99] pt-20 lg:pt-24 px-5 pb-6 flex flex-col justify-between xl:hidden bg-black ${
           isMenuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
@@ -108,27 +136,27 @@ const Navbar: React.FC<NavbarProps> = ({ handleOpenModal }) => {
           <Link
             to={"/"}
             onClick={toggleMenu}
-            className="font-medium block text-base text-center rounded-xl p-4 mb-2.5 cursor-pointer bg-[#f8f9fa] dark:bg-[#f8f9fa1a] dark:bg-opacity-10"
+            className="font-medium block text-base text-center rounded-xl p-4 mb-2.5 cursor-pointer bg-[#f8f9fa1a] bg-opacity-10"
           >
             Home
           </Link>
           <Link
             to={"/about"}
             onClick={toggleMenu}
-            className="font-medium block text-base text-center rounded-xl p-4 mb-2.5 cursor-pointer bg-[#f8f9fa] dark:bg-[#f8f9fa1a] dark:bg-opacity-10"
+            className="font-medium block text-base text-center rounded-xl p-4 mb-2.5 cursor-pointer bg-[#f8f9fa1a] bg-opacity-10"
           >
             About
           </Link>
           <Link
             to={"/projects"}
             onClick={toggleMenu}
-            className="font-medium block text-base text-center rounded-xl p-4 mb-2.5 cursor-pointer bg-[#f8f9fa] dark:bg-[#f8f9fa1a] dark:bg-opacity-10"
+            className="font-medium block text-base text-center rounded-xl p-4 mb-2.5 cursor-pointer bg-[#f8f9fa1a] bg-opacity-10"
           >
             Projects
           </Link>
           
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };
